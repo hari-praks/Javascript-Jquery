@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>19BIT0283</title>
+<style> span{
+border: dotted 1px red;
+background-color: rgb(255,0,0,0.1);
+padding: 5px; margin: 5px;
+}
+div{
+margin: 5px; padding: 5px;
+}
+</style>
+<script>
+function form_func(){ document.getElementById("output").innerHTML = ''; 
+var inputstr = document.getElementById ("phrase").value;
+var inputfilter = document.getElementById ("filter").value;
+var i = 0, j;
+var check = RegExp(inputfilter+'+','i'); var words = inputstr.split(" "); words.reverse();
+for(j = 0; j < words.length; j+=1){
+ 
+if (check.test(words[j])) { i+=1;
+}
+else{
+if((i-j)%2!=0){document.getElementById ("output").innerHTML += '<span style="color:red">'+words[j]+'</span> ';} else {
+{document.getElementById ("output").innerHTML += '<span style="color:red"><u>'+words[j]+'</u></span> ';}
+}
+}
+}
+document.getElementById("count").innerHTML =i+" word(s) filtered out";
+}
+</script>
+</head>
+<body>
+<h1>Sentence Reverser!</h1>
+<form id="form1" action="">
+<table>
+ 
+<tr>
+<td>Phrase: </td>
+<td><input type="text" size = "30" id="phrase"></td>
+</tr>
+<tr>
+<td>Filter: </td>
+<td>
+<input type="text" size="8" id="filter"></td>
+<tr>
+<tr>
+<td><button type="button"
+onclick="form_func()">Go!</button></td>
+</tr>
+</table>
+</form>
+<div id="output">
+</div>
+<div id="count">
+</div>
+</body>
+</html>
+
+
+
+

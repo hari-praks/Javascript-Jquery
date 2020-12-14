@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ex-8-19BIT0283</title>
+		<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style type="text/css">
+	#id1{
+
+		border: 3px solid red;
+		background-color: yellow;
+		width: 20%;
+		height: 30px;
+
+	}
+	#add{
+		color: aqua;
+		background-color: black;
+		width: 70px;
+		padding: 5px;
+		border-radius: 5px;
+
+	}
+	#remove{
+		color: aqua;
+		background-color: black;
+		width: 70px;
+		padding: 5px;
+		border-radius: 5px;
+
+	}
+body{
+	background-color: linen;
+
+}
+</style>
+<script>
+	$(document).ready(function(){
+		$("#add").click(function(){
+			var addlast = $("#id1").val();
+			$("#id1").val("");
+			alert("Are you sure of adding it!");
+			$("#id3").append("<li>"+addlast+"</li>");
+			$("li:odd").css({"background-color":"yellow"});
+		});
+	});
+
+	function removeItem() {
+		var item = $("#id1").val();
+		var list = document.querySelectorAll("li");
+		$("#id1").val("");
+		alert("Are you sure of deleting it!");
+		var found = false;
+		for(var i = 0; i < list.length; i++) {
+			if(list[i].innerHTML.toLowerCase() == item.toLowerCase() && !found) 
+				{
+					document.getElementById("id3").removeChild(list[i]);
+					found = true;
+				}
+			}
+
+}
+
+
+</script>
+</head>
+<body>
+	<h1>To-do List</h1>
+	<input type="text" id="id1"></input>
+	<input type="button" id="add" value="add"></input>
+	<input type="button" id="remove" value="remove" onclick="return removeItem()"></input>
+	<ul id="id3">
+	</ul>
+	
+</body>
+</html>

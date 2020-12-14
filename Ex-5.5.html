@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Availablity status</title>
+</head>
+<body>
+</body>
+<h3>To Confirm Ticket Click Below</h3> 
+	Enter No of Tickets: <input type="text" id="ticketid"></input>
+	<input type="button" id="buttonid" value="Book ticket" onclick="return check()"></input>
+	
+
+<script>
+function check()
+{
+ var Availablity=5;
+ var num=document.getElementById("ticketid").value;
+ console.log(num);
+ if(num<Availablity)
+ 	{
+ 		var getstring = decodeURIComponent(window.location.search);
+ 		getstring = getstring.substring(1);
+ 		var queries = getstring.split("&");
+ 		for (var i = 0; i < queries.length-1; i++)
+ 		{
+ 			document.write("<br><h3>"+queries[i] + "</h3><br>");
+ 		}
+ 		document.write("<h1>Ticket Booked Successfully");
+ 	}
+ 	else
+ 	{
+ 		alert("Ticket not available");
+ 	}
+ }
+ 
+</script> 
+</body>
+</html>

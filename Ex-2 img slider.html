@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>19BIT0283</title>
+	<style type="text/css">
+		#id1{
+			
+			color:aqua;
+			background-color: black;
+			width: 100%;
+			text-align: right;
+			margin-bottom: 2%;
+		}
+		#id2{
+			float: right;
+			width: 50%;
+		}
+		#id3{
+			float: left;
+			width: 40%;
+			background-color: yellow;
+			padding: 2%;
+
+		}
+		#imgid{
+			width: 100%;
+			border-radius: 20px;
+			height: 5%;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="id1"></div>
+	<div id="id2">
+		<div class="1stimg">
+		<img src="C:\Users\hari\Desktop\FALL 20-21\WEB TECH\DA\pet2.jpg" id="imgid">
+		</div>
+		<div class="1stimg">
+		<img src="C:\Users\hari\Desktop\FALL 20-21\WEB TECH\DA\pet5.jpg" id="imgid"></div>
+		<div class="1stimg">
+		<img src="C:\Users\hari\Desktop\FALL 20-21\WEB TECH\DA\pet1.jpg" id="imgid">
+	</div>
+
+	</div>
+
+
+	<div id="id3">
+		
+		COLOR PICKER: <input type="color" name="picker"><br>
+		<p>The color of the background and the font of text changes</p>
+		
+	
+	<select>
+		<option>12</option>
+		<option>14</option>
+		<option>16</option>
+		<option>18</option>
+		<option>20</option>
+	</select>
+		<select>
+		<option>Arial</option>
+		<option>Times New Roman</option>
+		<option>Arial Black</option>
+		<option>Tahoma</option>
+		<option>Serif</option>
+	</select>
+	<button onclick="return fontchange()">button</button>
+	</div>
+
+
+<script type="text/javascript">
+	
+setInterval(hours,1000);
+function hours()
+{
+	var d = new Date();
+	var a1 = d.toLocaleTimeString();
+	document.getElementById("id1").innerHTML=a1;
+}	
+function fontchange()
+{
+	document.body.style.backgroundColor = "red";
+	document.body.style.fontFamily = "Arial Black";
+	document.body.style.fontSize = "xx-large";
+}
+var x = 0;
+imgSlider();
+function imgSlider()
+{
+	var i;
+	var change = document.getElementsByClassName("1stimg");
+
+	for(i=0;i<change.length;i++)
+	{
+		change[i].style.display = "none";
+	}
+	x++;
+	if(x>change.length)
+	{
+		x = 1
+	}
+	change[x-1].style.display = "block";
+	setTimeout(imgSlider,2000);
+}
+</script>
+</body>
+</html>

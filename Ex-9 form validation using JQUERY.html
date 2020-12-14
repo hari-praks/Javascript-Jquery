@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Ex-9-19BIT0283
+	</title>
+		<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+
+		<style type="text/css">
+			
+		#heading{
+            background-color: grey;
+            width: 51%;
+            height: 50px;
+            float: left;
+            font-size: 20px;
+            padding: 20px;
+        }
+        .pass{
+        	margin-left: 19%;
+        }
+        .class1{
+        	background-color: linen;
+        	padding: 30px;
+        	width: 50%;
+        }
+        label{
+        	width: 140px;
+        	display: inline-block;
+
+        }
+		</style>
+
+		
+<script>
+	$(function(){
+		$("form[name='validate']").validate({
+			rules:{
+
+				fname:"required",
+				lname:"required",
+				city:"required",
+				State:"required",
+				Maddress:"required",
+				Zip:{
+					required:true,
+					digits:true,
+					minlength:5,
+					maxlength:5,
+				}
+			}
+		});
+	});
+	$(function(){
+		var citylist=["salem","Chennai","Coimbatore","Delhi","Mumbai","kolkata","Madurai","kanpur","Dehradun","Chandigarh"];
+		$("#id1").autocomplete({
+			source:citylist
+	});
+});
+</script>
+</head>
+<body>
+	<div id="heading"><h3>Event Registration Form</h3></div><br><br>
+<div class="class1">
+<form name="validate">
+	<br><br>
+	
+<label for="fname"> First name</label> 
+ <input type="text" name="fname"></input><br><br>
+<label for="fname"> Last name</label>
+<input type="text" name="lname"></input><br><br>
+<label for="Maddress" >MailingAddress</label> 
+<input type="email" name="Maddress" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}+$" title="sample email:abcd12@xxxx.co.in"></input><br><br>
+<label for="city">City</label>
+<input type="text"id="id1" name="city"></input><br><br><br><br>
+<label for="State">State</label> 
+<input type="text" name="State"></input><br><br>
+<label for="Zip">Zip Code</label> 
+<input type="text" name="Zip"></input><br><br>
+<label for="check"> Are You speaking at the Conference</label> 
+<input type="checkbox" name="check">Yes</input>
+<input type="checkbox" name="check">No</input><br><br>
+<label for="rad">Conference Pass</label>
+<div class="pass">
+<input type="radio" name="rad">1-day-pass</input><br>
+<input type="radio" name="rad">2-day-pass</input><br>
+<input type="radio" name="rad">3-day-pass</input><br>
+<input type="radio" name="rad">4-day-pass</input><br><br>
+</div>
+<label for="drop">Meal Preference</label> 
+<input type="dropdown" name="drop"></input><br><br><br>
+<input type="submit" value="Submit" style="margin-left: 10%;padding: 5px;width: 100px;"></input>
+</form>
+</div>
+</body>
+</html>

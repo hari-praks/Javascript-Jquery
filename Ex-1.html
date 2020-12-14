@@ -1,0 +1,97 @@
+
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		19BIT0283
+	</title>
+</head>
+<body>
+<script type="text/javascript">
+	var a=prompt("Enter no of customers");
+	var charge=[];
+	var total=0;
+	for(var i=1;i<=a;i++)
+	{
+		charge[i-1]=calculate_charge(prompt("Enter no of hours parked for customers"+i));
+		total+=charge[i-1];
+	}
+	for (var i=1; i<=a;i++) {
+		document.writeln("Charges for customer"+i+":$"+charge[i-1]);
+		document.write("<br>");
+	}
+	document.write("Yesterday's Receipt: $"+total);
+function calculate_charge()
+{
+	for(i=0;i<=a;i++)
+	{
+		var charge=2;
+		if(charge[i]>3)
+			charge[i]+=(a-3)*0.5;
+		if(charge>10)
+			charge=10;
+		return charge;
+	}
+}
+</script>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		19BIT0283
+	</title>
+</head>
+<body>
+	<br><br>
+	<script type="text/javascript">
+		var a=prompt("Enter no of customers");
+		document.write("<h2>Bill for parking</h2>");
+		document.write("Number of customers: "+a);
+		document.write("<br>");
+		var hours=Array();
+		var total=0;
+		var amount=2;
+		for(var i=1;i<=a;i++)
+		{
+			hours[i]=prompt("Enter hours parked by customer"+i);
+			calculate_charge(hours[i]);
+		}
+
+
+		function calculate_charge(hours){
+			for(i=0;i<a;i++)
+			{
+				if(hours[i]>3)
+				{
+					amount=amount+(hours[i]-3)*0.5;
+					document.write("Total amount is : $"+amount);
+				}
+				if(hours[i]==3)
+				{
+					amount=2;
+					document.write("Total amount is : $"+amount);
+
+				}
+				if(hours[i]>10)
+				{
+					amount=10;
+					document.write("Total amount is : $"+amount);
+				}
+
+			}
+			document.write("<br>");
+			document.write("Yesterday's Receipt: $"+amount);
+		}
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>

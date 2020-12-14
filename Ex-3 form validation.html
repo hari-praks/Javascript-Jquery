@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		19BIT0283
+	</title>
+<script type="text/javascript">
+	function reset()
+	{
+
+		document.getElementById("resetid").reset();
+		onfocus(document.getElementById("nameid"));
+		
+	}
+	function checkfunction()
+	{
+		var address=document.getElementById("taddress").value;
+		if(document.getElementById("checkid").checked == true)
+		{
+			document.getElementById("paddress").value=address;
+			document.getElementById("paddress").disabled=true;
+		}
+	}
+</script>
+</head>
+<body>
+
+<form name="form" id="myform"  method="post" action="ex-2.html">
+	<input type="text"  id="nameid" name="name" placeholder="Enter name" pattern="[a-zA-Z' ']{0,30}" title="Name must be in alphabets  maxlength is 30"></input><br><br>
+	<input type="text" name="regno" placeholder="Enter regno" pattern="[A-Z0-9]{9}$" title="Reg num must be alphanumeric and in format 19BIT2222"><br><br>
+	<input type="email" placeholder="Enter email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}+$" title="sample email:abcd12@xxxx.co.in"></input><br><br>
+
+	
+	<input type="date" placeholder="Enter DOB" name="dob"></input><br><br>
+	<input type="text" placeholder="Enter your Program eg:IT" name="pgm"></input><br><br>
+	<input type="text" placeholder="Enter mobile no" name="phone" pattern="[0-9]{10}" title="It must contain only 10 digits"></input><br><br>
+	<textarea id="taddress" placeholder="Enter temporary address"></textarea><br><br>
+	
+	<input type="checkbox" id="checkid" name="check" onclick="return checkfunction()"></input>
+	<label for="check">Permanent address is same as temporary address</label><br><br>
+	<textarea id="paddress" placeholder="Enter Permanent address"></textarea><br><br>
+	
+    
+	<input type="Submit" value="Submit"></input>
+	<input type="button" style="width: 3.5%; height:2%; " value="Reset" id="resetid" onclick="reset()"></input>
+</form>
+</body>
+</html>
+
+
+
+
